@@ -47,7 +47,8 @@ class WithNMediumCores(n: Int) extends Config((site, here, up) => {
 })
 
 class DefaultConfig extends Config(
-  new WithBootROM ++ new freechips.rocketchip.system.DefaultConfig)
+  // new WithBootROM ++ new freechips.rocketchip.system.DefaultConfig)
+  new WithBootROM ++ new freechips.rocketchip.system.RoccExampleConfig) // rbshi: change the config with Rocc
 class DefaultMediumConfig extends Config(
   new WithBootROM ++ new WithNMediumCores(1) ++
   new freechips.rocketchip.system.BaseConfig)
